@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auto_ria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="image" href="images/">
+</head>
+<body style="width: 1000px;height:1000px;display: block;">
+<div class="main-scr">
+        <div class="sidebar">
+            <div style="margin-left: -20px;" class="clal">
+                <div><a href = "about.html"></a></div></a><div style="display:flex;"><img src="images/autoria.png" alt="auto_ria" style="width:140px;height:45px;margin-left: 70px;margin-top: 5px;border: 1px solid;padding: 1px;color: dimgray;"/>
+                    <div style="width: 80%;display: flex;justify-content: center;margin-left: -190px;">
+                    <a href="notnew_auto.html"><button>Вживані Авто</button></a>
+                    <a href="index.html"><button>Нові Авто</button></a>
+                    <a href="News.html"><button>Новини</button></a>
+                    <a href="Uk_tehnik.html"><button>Українцька Техніка</button></a>
+                    <a href="Vodna_tehnika.html"><button>Водний Транспорт</button></a>
+                    </div>
+                </a><img src="images/photo.jpg" alt="photo" style="width: 60px;height: 60px;">
+                <a style="color:green;font: 1em sans-serif;font-family: 'Courier New', Courier, monospace;margin-top:20px;text-shadow: 1px 4px 34px rgba(0, 0, 0, 0.25);" href="about.html">Про нас</a>
+                </div>
+            </div>
+<div style="margin-top: 20px;padding: 10px;" id="product-list">
+    <script>
+        const products = [
+            {
+                name: "Kia Sportage 2025",
+                description: "Prestige• 1.6 T-GDi DCT (160 к.с.)-Передній привід-Бензин, 1.6 л",
+                price: '32 000 $',
+                image1: "images/Kia (2).jpg",
+                image2: "https://en.wheelz.me/wp-content/uploads/2024/11/Kia-Sportage-2026-3.webp"
+
+            },
+            {
+                name: "Mercedes-AMG CLE 53 Coupé",
+                description: "витончена конфігурація двигуна забезпечує вражаючі 449 к.с. (330 кВт) та надійний крутний момент 560 Нм",
+                price: '92 000 $',
+                image1: "https://e7852c3a.delivery.rocketcdn.me/wp-content/uploads/2023/12/Mercedes-AMG-1400x934.jpg",
+                image2: "https://e7852c3a.delivery.rocketcdn.me/wp-content/uploads/2023/12/23C0420_018-770x514.jpg"
+            },
+            {
+                name: "BMW M2 Coupé",
+                description: "353 кВт (480 к.с)-Крутний момент 550Нм;0–100 км/год 4.2 с.-Гарний вибір для вас",
+                price: '78 000 $',
+                image1: "https://images3.kingautos.net/2023/06/14/l5_ZpJbPkdCUm8OklVH3G0ns-1Lm.jpg",
+                image2: "https://hips.hearstapps.com/hmg-prod/images/bmw-m2-zandvoort-blue-046-6426fb231b11c.jpg"
+            },
+            {
+                name: "VVolkswagen ID.4 Crozz 2024",
+                description: "I покоління;Двигун-ЕлектроЗапас ходу:600 км;Коробка передач:Автомат;Хороший вибір",
+                price: '35 300 $',
+                image1: "https://cdn3.riastatic.com/photosnew/auto/photo/volkswagen_id-4-crozz__593248938hd.webp",
+                image2: "https://cdn4.riastatic.com/photosnew/auto/photo/volkswagen_id-4-crozz__593248929hd.webp"
+            }
+        ];
+
+        const productList = document.getElementById("product-list");
+
+        products.forEach(product => {
+            const productDiv = document.createElement("div");
+            productDiv.className = "product";
+
+            productDiv.innerHTML = `
+                <div style="margin-left:100px;border: 2px solid;border-color: black;padding: 10px;border-radius: 30px;width:990px;height:300px;margin-top:10px">
+                    <img style="width:330px;height:200px;position: absolute;border-radius: 15px;box-shadow: 31px 26px 100px -22px rgba(0, 0, 0, 0.25);margin-left:250px;margin-top:100px" src="${product.image1}" alt="${product.name}">
+                    <img style="width:330px;height:200px;position: absolute;border-radius: 15px;box-shadow: 31px 26px 100px -22px rgba(0, 0, 0, 0.25);margin-left:600px;margin-top:80px" src="${product.image2}" alt="${product.name}">
+                    <h3 style="font-size: 15px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;text-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);margin-left:50px;">${product.name}</h3>
+                    <p style="font-size: 15px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;text-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);margin-left:50px;">${product.description}</p>
+                    <strong style="font-size: 25px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;text-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);margin-left:50px;">Ціна: ${product.price}</strong><br>
+                    <button style="position: absolute;border-radius: 75px;border: 2px solid black;margin-left: 40px;margin-top:30px" class="buy-button" onclick="buyProduct('${product.name}')">Купити</button>
+                </div>
+            `;
+
+            productList.appendChild(productDiv);
+        });
+
+        function buyProduct(productName) {
+    const url = `confirmation.html?product=${encodeURIComponent(productName)}`;
+    window.location.href = url;
+  }
+    </script>
+    <img style="width: 650px;position: absolute;left: 1200px;top: 156px;border-radius: 15px;box-shadow: 31px 26px 100px -22px rgba(0, 0, 0, 0.25);" src="images/auto1.png" alt="auto1">
+    <img style="width: 650px;position: absolute;left: 1150px;margin-top: -800px;border-radius: 15px;box-shadow: 31px 26px 100px -22px rgba(0, 0, 0, 0.25);" src="images/auto3.png" alt="auto3">
+    <img style="width: 650px;position: absolute;left: 1200px;margin-top: -405px;border-radius: 15px;box-shadow: 31px 26px 100px -22px rgba(0, 0, 0, 0.25);" src="images/auto2.png" alt="auto2">
+    <img style="width: 650px;position: absolute;left: 1150px;margin-top: 60px;border-radius: 15px;box-shadow: 31px 26px 100px -22px rgba(0, 0, 0, 0.25);" src="images/auto4.png" alt="auto4">
+<footer style="margin-top: 50px; padding: 20px; background-color: #eee; text-align: center; font-size: 20px; color: #444;margin-left: 200px;">
+  <p>
+    Наша компанія — одна з провідних організацій в Україні з купівлі та продажу автомобілів.  
+    Ми вже понад 10 років успішно допомагаємо клієнтам знайти ідеальне авто або вигідно продати свій транспортний засіб.  
+    Наша мета — зробити процес купівлі та продажу максимально зручним, безпечним і прозорим.
+  </p>
+  <p>
+    Співпрацюємо з провідними брендами, офіційними дилерами та приватними продавцями.  
+    Ми дбаємо про репутацію, тому кожен автомобіль проходить ретельну перевірку перед продажем.
+  </p>
+  <p>
+    Обираючи нас — ви обираєте якість, чесність і надійність.
+  </p>
+</footer>
+</div>
+</div>
+</div>
+</body>
+</html>

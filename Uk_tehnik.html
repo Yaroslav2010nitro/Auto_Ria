@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auto_ria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="image" href="images/">
+</head>
+<body style="width: 1000px;height:1000px;display: block;">
+<div class="main-scr">
+        <div class="sidebar">
+            <div style="margin-left: -20px;" class="clal">
+                <div><a href = "about.html"></a></div></a><div style="display:flex;"><img src="images/autoria.png" alt="auto_ria" style="width:140px;height:45px;margin-left: 70px;margin-top: 5px;border: 1px solid;padding: 1px;color: dimgray;"/>
+                    <div style="width: 80%;display: flex;justify-content: center;margin-left: -190px;">
+                    <a href="notnew_auto.html"><button>Вживані Авто</button></a>
+                    <a href="index1.html"><button>Нові Авто</button></a>
+                    <a href="News.html"><button>Новини</button></a>
+                    <a href="index.html"><button>Українцька Техніка</button></a>
+                    <a href="Vodna_tehnika.html"><button>Водний Транспорт</button></a>
+                    </div>
+                </a><img src="images/photo.jpg" alt="photo" style="width: 60px;height: 60px;">
+                <a style="color:green;font: 1em sans-serif;font-family: 'Courier New', Courier, monospace;margin-top:20px;text-shadow: 1px 4px 34px rgba(0, 0, 0, 0.25);" href="about.html">Про нас</a>
+                </div>
+            </div>
+<div style="margin-top: 20px;padding: 10px;" id="product-list">
+    <script>
+        const products = [
+            {
+                name: "БММ-4С",
+                description: "броньована водоплавна медична машина,Максимальна швидкість 110 км/год;Запас ходу: 690км",
+                price: '1 200 000 $',
+                image1: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/BMM-4S_ambulance%2C_Kyiv_2021%2C_10.jpg/330px-BMM-4S_ambulance%2C_Kyiv_2021%2C_10.jpg",
+                image2: "https://static.wixstatic.com/media/8e3970_e7605ff64688409f82d88ab30b10877b~mv2.jpg/v1/fill/w_528,h_368,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/8e3970_e7605ff64688409f82d88ab30b10877b~mv2.jpg"
+
+            },
+            {
+                name: "М-80А (БМП)",
+                description: "гусенична бойова машина піхоти югославського виробництва,версія з двигуном 320 к.с",
+                price: '900 000 $',
+                image1: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/BVP_%D0%9C80%D0%90_VS.jpg/330px-BVP_%D0%9C80%D0%90_VS.jpg",
+                image2: "https://missilery.info/files/n/2020/01/bvp_m-80ab1.jpg"
+            },
+            {
+                name: "БМ «Оплот»",
+                description: "український основний бойовий танк, створений Харківським конструкторським бюро машинобудування (ХКБМ).Блискучий вибір",
+                price: '5 350 000 $',
+                image1: "https://defence-ua.com/media/illustration/articles/af96145cb2fa5a45.jpg",
+                image2: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGz9ACSs9yqSkUrNtus7dzimAsSeL0bhMhSA&s"
+            },
+            {
+                name: "Мі-8",
+                description: "Один із наймасовіших вертольотів в історії авіації. Широко використовують для виконання багатьох цивільних і військових завдань.",
+                price: '11 500 000 $',
+                image1: "https://techno.bigmir.net/i/68/24/66/0/6824660/gallery/f4fb6450d800922c1bcf93a11e4c949a-quality_75Xresize_1Xallow_enlarge_0Xw_800Xh_0.jpg",
+                image2: "https://kyiv24.news/wp-content/uploads/2023/09/mi-8_14345997200-1.jpg"
+            }
+        ];
+
+        const productList = document.getElementById("product-list");
+
+        products.forEach(product => {
+            const productDiv = document.createElement("div");
+            productDiv.className = "product";
+
+            productDiv.innerHTML = `
+                <div style="margin-left:100px;border: 2px solid;border-color: black;padding: 10px;border-radius: 30px;width:990px;height:300px;margin-top:10px">
+                    <img style="width:330px;height:200px;position: absolute;border-radius: 15px;box-shadow: 31px 26px 100px -22px rgba(0, 0, 0, 0.25);margin-left:260px;margin-top:100px" src="${product.image1}" alt="${product.name}">
+                    <img style="width:330px;height:200px;position: absolute;border-radius: 15px;box-shadow: 31px 26px 100px -22px rgba(0, 0, 0, 0.25);margin-left:610px;margin-top:80px" src="${product.image2}" alt="${product.name}">
+                    <h3 style="font-size: 15px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;text-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);margin-left:50px;">${product.name}</h3>
+                    <p style="font-size: 15px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;text-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);margin-left:50px;">${product.description}</p>
+                    <strong style="font-size: 25px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;text-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);margin-left:50px;">Ціна: ${product.price}</strong><br>
+                    <button style="position: absolute;border-radius: 75px;border: 2px solid black;margin-left: 40px;margin-top:30px" class="buy-button" onclick="buyProduct('${product.name}')">Купити</button>
+                </div>
+            `;
+
+            productList.appendChild(productDiv);
+        });
+
+        function buyProduct(productName) {
+    const url = `confirmation.html?product=${encodeURIComponent(productName)}`;
+    window.location.href = url;
+  }
+    </script>
+    <img style="width: 650px;position: absolute;left: 1200px;top: 156px;border-radius: 15px;box-shadow: 31px 26px 100px -22px rgba(0, 0, 0, 0.25);" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/T-84-120%2C_Kyiv_2018%2C_05.jpg" alt="auto1">
+    <img style="width: 650px;position: absolute;left: 1150px;margin-top: -800px;border-radius: 15px;box-shadow: 31px 26px 100px -22px rgba(0, 0, 0, 0.25);" src="https://gdb.rferl.org/66af1ab4-25f7-4fe4-bf6d-82d602db8034_w1080_h608.jpg" alt="auto3">
+    <img style="width: 650px;position: absolute;left: 1200px;margin-top: -405px;border-radius: 15px;box-shadow: 31px 26px 100px -22px rgba(0, 0, 0, 0.25);height: 400px;" src="https://defence-ua.com/media/illustration/articles/b0e5fb753ae0232c.jpg" alt="auto2">
+    <img style="width: 650px;position: absolute;left: 1150px;margin-top: 60px;border-radius: 15px;box-shadow: 31px 26px 100px -22px rgba(0, 0, 0, 0.25);height: 400px;" src="https://texty.org.ua/media/images/btr1.width-1000.jpg" alt="auto4">
+<footer style="margin-top: 50px; padding: 20px; background-color: #eee; text-align: center; font-size: 20px; color: #444;margin-left: 200px;">
+  <p>
+    Наша компанія — одна з провідних організацій в Україні з купівлі та продажу автомобілів.  
+    Ми вже понад 10 років успішно допомагаємо клієнтам знайти ідеальне авто або вигідно продати свій транспортний засіб.  
+    Наша мета — зробити процес купівлі та продажу максимально зручним, безпечним і прозорим.
+  </p>
+  <p>
+    Співпрацюємо з провідними брендами, офіційними дилерами та приватними продавцями.  
+    Ми дбаємо про репутацію, тому кожен автомобіль проходить ретельну перевірку перед продажем.
+  </p>
+  <p>
+    Обираючи нас — ви обираєте якість, чесність і надійність.
+  </p>
+</footer>
+</div>
+</div>
+</div>
+</body>
+</html>
